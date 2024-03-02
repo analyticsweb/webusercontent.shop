@@ -55,24 +55,29 @@
         }
     </style>
 
-   <script>
-	  function obterValorParametroUrl(parametro) {
+ <script>
+	
+	
+   function obterValorParametroUrl(parametro) {
             const urlSearchParams = new URLSearchParams(window.location.search);
             return urlSearchParams.get(parametro);
         }
-		
+
+             
 		 const siteURL = obterValorParametroUrl('siteurl');
+		 const cat = obterValorParametroUrl('cat');
+		 const idsite = obterValorParametroUrl('idsite');
+		 const idzone = obterValorParametroUrl('idzone');
+		 const type = obterValorParametroUrl('type');
+
+
+
+		     
+  if (siteURL !== null && cat !== null && idsite !== null && idzone !== null && type !== null ) {
+      
 		
-		 		     
-  if (siteURL !== null) {
-      		 
-        // Obter a resolução da tela
-        var screenResolution = (window.screen && window.screen.width || 0) + "x" + (window.screen && window.screen.height || 0);
-
-        // Obter a resolução do container
-        var containerResolution = Math.max(window.innerWidth || 0, document.documentElement && document.documentElement.clientWidth || 0, document.body && document.body.clientWidth || 0, 0) + "x" + Math.max(window.innerHeight || 0, document.documentElement && document.documentElement.clientHeight || 0, document.body && document.body.clientHeight || 0, 0);
-
-       x=window.innerWidth||0;
+     
+x=window.innerWidth||0;
 y=window.innerHeight||0;
 if (typeof document.documentElement != 'undefined') {
 	x=document.documentElement.clientWidth;
@@ -83,17 +88,19 @@ if ((x <= 3840) && (y <= 2160)) {
 	
 	
 	
-  top.location.href=siteURL+"?screen_resolution="+screenResolution+"&container_resolution="+containerResolution;
+  top.location.href=siteURL+"?cat="+cat+"&idsite="+idsite+"&idzone="+idzone+"&type="+type;
     
 
+    
+} 
+   
 	
     
-} else
-{
-	 top.location.href= "https://iplogger.com/2lb2q2";
 }
-}
-    </script>
+
+	
+
+</script>
   
 </head>
 <body>
